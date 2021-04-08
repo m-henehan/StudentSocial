@@ -169,3 +169,41 @@ exports.putlikes = functions.https.onRequest((request, response) =>
         })
     });
 });
+
+exports.postsubcomments = functions.https.onRequest((request, response) =>
+{
+    console.log("Request body", request.body);
+    cors(request, response, () => {
+		// Create a timestamp to add to the comment document
+		const currentTime = admin.firestore.Timestamp.now();
+		request.body.timestamp = currentTime;
+
+        admin.firestore().collection("comments").add(request.body).then(() =>{
+            response.send("Saved in the database");
+        });
+    });
+})
+
+exports.getsubcomments = functions.https.onRequest((request, response) =>
+{
+
+    //connect to our Firestore database
+    cors(request, response, () => {
+        let myData = []
+        admin.firestore().collection("comments").get().then((snapshot) => {
+            if(snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No data in database');
+                return;
+            }
+
+            snapshot.forEach(doc => {
+                let docObj = {};
+				docObj.id = doc.id;
+				myData.push(Object.assign(docObj, doc.data()));
+
+            })
+            response.send(myData);
+        });
+    })
+})

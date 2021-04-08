@@ -1,18 +1,17 @@
-function postcomments(){
-    let modName = extractModule(window.location.toString());
-	let likes = 0;
+function postSubComments(){
+
+	let postId = extractModule(window.location.toString());
 
     function extractModule(str)
     {
         let leftBound = str.indexOf("?") + 1;
         let rightBound = str.indexOf("&");
-        let fname = str.substring(leftBound, rightBound);
-		fname = fname.replace(/%20/g, " ");
-		return fname;
+		let id = str.substring(leftBound, rightBound);
+		return id;
     }
-
+	
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://us-central1-emma-s-code.cloudfunctions.net/postcomments', true);
+    xhr.open('POST', 'https://us-central1-emma-s-code.cloudfunctions.net/postsubcomments', true);
 
     xhr.setRequestHeader("Content-type", "application/json");
     //Track the state changes of the request
@@ -22,13 +21,12 @@ function postcomments(){
         let OK = 200; // status 200 is a successful return
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                location.href ="./postPage.html"+"?" +modName+ "&";
+                getSubComments();
             } else {
                 console.log('Error: ' + xhr.status);
             }
         }
     };
-    xhr.send(JSON.stringify({"pTag": document.getElementById('postTag').value, "pTitle": document.getElementById('postTitle').value, 
-	"pText": document.getElementById('postText').value, "module": modName, "likes": likes}
+    xhr.send(JSON.stringify({"postId": postId, "commentText": document.getElementById('commentText').value}
     ));
 }

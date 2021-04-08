@@ -6,10 +6,11 @@
 
 </head>
 <body onload = "getUsers();">
-
-<!-- <button type="button" onclick="displayModules()">Click to choose module</button> -->
+<div class="searchBar">
+<input type="text" placeholder="Search.." name="search" id="search" value = ''>
+<button type="button" onClick="getForums();">Submit</button>
+</div>
 <div id="insertButtonsHere"></div>
-<!--  <button onclick="location.href='./createAForum.html'">Create a Forum</button>  -->
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="/__/firebase/8.2.7/firebase-app.js"></script>
@@ -25,5 +26,6 @@
 <script src="./javascripts/getusers.js"></script>
 <script src="./javascripts/getuserforums.js"></script>
 <script src="./javascripts/getcomments.js"></script>
+<script src="./javascripts/getforums.js"></script>
 </body>
 </html>
