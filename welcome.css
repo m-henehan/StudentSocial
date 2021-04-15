@@ -1,0 +1,38 @@
+body {
+    background-image: url("../photos/background1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #888888;
+}
+
+.title{
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    position: fixed;
+    font-weight: bold;
+    font-size: 10vw;
+    top: 15vw;
+    left: 2vw;
+}
+
+.purple{
+    color: blueviolet;
+}
+
+.white{
+    color: #ECEFF1;
+}
+
+.button1{
+    position: relative;
+    color: blueviolet;
+    background-color: white;
+    padding: .8vw 3vw;
+    border-radius: .5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    left:5vw;
+    top: 400px;
+}
