@@ -1,14 +1,18 @@
-function viewComment()
+function getFilteredPosts(selectObject)
 {
-	let postId = extractModule(window.location.toString());
+    let modName = extractModule(window.location.toString());
+	let tag = selectObject.value;
 
     function extractModule(str)
     {
         let leftBound = str.indexOf("?") + 1;
         let rightBound = str.indexOf("&");
-		let id = str.substring(leftBound, rightBound);
-		return id;
+		let fname = str.substring(leftBound, rightBound);
+        fname = fname.replace(/%20/g, " ");
+		return fname;
     }
+	 let sHTML = "";
+
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://us-central1-emma-s-code.cloudfunctions.net/getcomments');
 
@@ -20,30 +24,32 @@ function viewComment()
         let OK = 200; // status 200 is a successful return
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                let sHTML = "";
+               
                 let data = JSON.parse(xhr.responseText);
                 for (let i = 0; i < data.length; i++) {
-                    if(data[i].id === postId){
+                    if(data[i].module === modName && data[i].pTag === tag){
 						sHTML += "<div id='textBubble'>";
                         sHTML += "<p> Tag: " + data[i].pTag+ "</p>";
 						sHTML += "<p> Title: " + data[i].pTitle+ "</p>";
 						sHTML += "<p> Text: " + data[i].pText+ "</p>";
 						sHTML += "<p> Likes: " + data[i].likes+ "</p>";
 						sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
-						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br></div>";
-						
+						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br>";
+						let url = "location.href="+"'"+"./commentPage.html"+"?" +data[i].id+ "&"+"'";
+						sHTML += "<button onclick="+url+" id="+data[i].id+">Comments</button></div><br><br>";
                 }}
-				sHTML+= "<label for='postTitle'>Comment</label>";
-				sHTML+= "<input class='form-control' type='text' id='commentText' name='commmentText'  value = ''><br>";
-				sHTML += "<button id='myButton' type='button' onClick='postSubComments();'>Submit</button>";
-				
+				let forumUrl = modName.replace(/ /g, "%20");
+				let url2 = "location.href="+"'"+"./chatPage.html"+"?" +forumUrl+ "&"+"'";
+				sHTML += "<button onclick="+url2+" id="+modName+">Create a Post</button>";
 				document.getElementById("posts").innerHTML = sHTML;
-				getSubComments();
             } else {
                 console.log('Error: ' + xhr.status);
             }
         }
     }
+	
+				
     xhr.send(null);
+	
 	
 }

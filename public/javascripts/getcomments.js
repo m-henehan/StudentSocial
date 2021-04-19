@@ -27,6 +27,7 @@ function getcomments()
                 let data = JSON.parse(xhr.responseText);
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].module === modName){
+						sHTML += "<div id='textBubble'>";
                         sHTML += "<p> Tag: " + data[i].pTag+ "</p>";
 						sHTML += "<p> Title: " + data[i].pTitle+ "</p>";
 						sHTML += "<p> Text: " + data[i].pText+ "</p>";
@@ -34,7 +35,7 @@ function getcomments()
 						sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
 						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br>";
 						let url = "location.href="+"'"+"./commentPage.html"+"?" +data[i].id+ "&"+"'";
-						sHTML += "<button onclick="+url+" id="+data[i].id+">Comments</button><br><br>";
+						sHTML += "<button onclick="+url+" id="+data[i].id+">Comments</button></div><br><br>";
                 }}
 				let forumUrl = modName.replace(/ /g, "%20");
 				let url2 = "location.href="+"'"+"./chatPage.html"+"?" +forumUrl+ "&"+"'";
