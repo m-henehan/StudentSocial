@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create a new forum</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/firstform.css"/>
+    <script src="./javascripts/addUserForums.js"></script>
+    <script src="./javascripts/createForum.js"></script>
+</head>
+<body>
+
+<div class="login">
+    <div class="login-header">
+        <br>
+        <h1b>Create a New Forum</h1b>
+    </div>
+
+    <div class="login-form">
+        <div class="h3bold">To create a new forum for a module,<br>enter the required details below.<br></div>
+        <br>
+        <h3>Module Name:</h3>
+        <div class="searchBar">
+            <label for="name">
+                <input type="text" placeholder="Enter module name..." id="name" value = '' required>
+            </label>
+        </div>
+        <br>
+        <h3>Module Code:</h3>
+        <div class="searchBar">
+            <label for="code">
+                <input type="text" placeholder="Enter module code..." id="code" value = '' required>
+            </label>
+        </div>
+        <br>
+        <button type="button" class="subButton" onClick="createForum()">Submit</button>
+        <br>
+
+    </div>
+</div>
+
+<script src="/__/firebase/8.3.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js?useEmulator=true"></script>
+</body>
+</html>
