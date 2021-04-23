@@ -1,0 +1,21 @@
+exports.getAllUserForums = functions.https.onRequest((request, response) =>
+{
+
+    //connect to our Firestore database
+    cors(request, response, () => {
+        let myData = []
+        return admin.firestore().collection("students").doc(request.body.docid).collection("modules").get().then((snapshot) => {
+            /* if(snapshot.empty) {
+                console.log('No matching documents.');
+                response.send({'message':'No data in database'});
+                return;
+            }*/
+            console.log("utils executing");
+            snapshot.forEach(doc => {
+                myData.push(doc.data());
+            })
+            console.log("myData: " + myData);
+            response.send(myData);
+        });
+    })
+})
