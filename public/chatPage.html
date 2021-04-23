@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel='stylesheet' href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="./javascripts/forumSelect.js"></script>
+	<script src="./javascripts/getuserforums.js"></script>
+	<script src="./javascripts/postcomments.js"></script>
+	<script src="./javascripts/getcomments.js"></script>
+	<script src="./javascripts/getforumtype.js"></script>
+	
+</head>
+<body  onload='getForumType();'>
+<form name = "test1">
+<input type="hidden" name="addStr">
+</form>
+<form>
+<div class="form-group">
+<input type="hidden" class="form-control" id="forumType" name="forumType" value="">
+<br>
+<div id='postTags'></div>
+<div class="form-group">
+<label for="postTitle">Title</label>
+<input class="form-control" type="text" id="postTitle" name="postTitle"  value = ""><br>
+<label for="postText">Text</label>
+<textarea class="form-control" id="postText" name="postText" value = ""></textarea><br>
+<button id="myButton" type="button" onClick='postcomments();'>Submit</button>
+</div>
+</form>
+
+
+<div id="comments"></div>
+
+</body>
+</html>

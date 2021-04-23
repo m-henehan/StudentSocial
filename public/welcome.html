@@ -1,0 +1,126 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/welcomeStyles.css"/>
+    <script src="javascripts/register.js"></script>
+    <script src="javascripts/login.js"></script>
+    <script src = "./javascripts/getAllForums.js"></script>
+    <script src = "./javascripts/createUserObj.js"></script>
+    <script src="javascripts/accessSecureAPI.js"></script>
+</head>
+<body>
+
+<div class="title">
+    <span class="purple">Student</span><span class="white">Social</span>
+</div>
+
+<div class="title" id="mods"></div>
+
+<button onclick="document.getElementById('id01').style.display='block'" class="button1" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" method="post">
+
+        <div class="miniTitle"><span class="purple">Student</span><span class="white">Social</span></div>
+
+        <div class="container">
+            <div class="form-group">
+                <label for="logEmail"><b>Email</b></label>
+                <input type="text" id="logEmail" placeholder="Enter Email" name="uname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="logPsw"><b>Password</b></label>
+                <input type="password" id="logPsw" placeholder="Enter Password" name="psw" required>
+            </div>
+
+
+        </div>
+
+        <div class="container">
+            <button type="button" onclick="login()">Login</button>
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw"><a href="#">Forgot password?</a></span>
+        </div>
+    </form>
+</div>
+
+
+<button onclick="document.getElementById('id02').style.display='block'" class="button2" style="width:auto">Sign Up</button>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id02" class="modal">
+
+    <form class="modal-content animate" method="post">
+
+        <div class="miniTitle"><span class="purple">Student</span><span class="white">Social</span></div>
+
+        <div class="container">
+            <div class="form-group">
+                <label for="regEmail"><b>Email</b></label>
+                <input type="text" id="regEmail" placeholder="Enter Email" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="regPassword1"><b>Password</b></label>
+                <input type="password" id="regPassword1" placeholder="Enter Password" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="regPassword2"><b>Repeat Password</b></label>
+                <input type="password" id="regPassword2" placeholder="Repeat Password" required/>
+            </div>
+
+            <div class="clearfix">
+                <button type="button" class="signup" onclick="register()">Sign Up</button>
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Exit the form when user clicks outside the box
+    var modal1 = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal1) {
+            modal1.style.display = "none";
+        }
+    }
+
+    // Get the modal
+    var modal2 = document.getElementById('id02');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal2) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+
+<div class="textBox">
+    Welcome to Student Social, a new virtual <br>
+    platform for students to interact and <br>
+    discuss all aspects of college life. Stay up- <br>
+    to-date with the latest news around campus <br>
+    and connect with other students in your <br>
+    module groups and societies!
+</div>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="/__/firebase/8.3.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js?useEmulator=true"></script>

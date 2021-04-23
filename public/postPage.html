@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel='stylesheet' href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="./javascripts/forumSelect.js"></script>
+	<script src="./javascripts/getuserforums.js"></script>
+	<script src="./javascripts/postcomments.js"></script>
+	<script src="./javascripts/getcomments.js"></script>
+	<script src="./javascripts/deletecomments.js"></script>
+	<script src="./javascripts/getlikes.js"></script>
+	<script src="./javascripts/putlikes.js"></script>
+	<script src="./javascripts/viewcomment.js"></script>
+	<script src="./javascripts/postsubcomments.js"></script>
+	<script src="./javascripts/getsubcomments.js"></script>
+	<script src="./javascripts/getforumtype.js"></script>
+	<script src="./javascripts/getfilteredposts.js"></script>
+	<script src="./javascripts/getfiltertags.js"></script>
+</head>
+<body onload='getFilterTags(); getcomments();'>
+<form name = "test1">
+<input type="hidden" name="addStr">
+</form>
+
+<div class="form-group">
+<input type="hidden" class="form-control" id="forumType" name="forumType" value="">
+<br>
+<div id='postTags'></div>
+<div id="posts"></div>
+<div id="comments"></div>
+
+</body>
+</html>
