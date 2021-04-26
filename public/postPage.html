@@ -20,12 +20,17 @@
 	<script src="./javascripts/getforumtype.js"></script>
 	<script src="./javascripts/getfilteredposts.js"></script>
 	<script src="./javascripts/getfiltertags.js"></script>
+	<script src="./javascripts/postuserforums2.js"></script>
+	<script src="./javascripts/getdocid.js"></script>
+	<script src="javascripts/accessSecureAPI.js"></script>
+	<script src="javascripts/getforumtype2.js"></script>
+	
 </head>
-<body onload='getFilterTags(); getcomments();'>
+<body onload='getDocId();getFilterTags(); getcomments();'>
 <form name = "test1">
 <input type="hidden" name="addStr">
 </form>
-
+<button onclick="getForumType2()">Click me</button>
 <div class="form-group">
 <input type="hidden" class="form-control" id="forumType" name="forumType" value="">
 <br>

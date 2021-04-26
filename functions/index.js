@@ -127,6 +127,16 @@ exports.postuserforums = functions.https.onRequest((request, response) =>
     });
 })
 
+exports.postuserforums2 = functions.https.onRequest((request, response) =>
+{
+    console.log("Request body", request.body);
+    cors(request, response, () => {
+        admin.firestore().collection("users").doc(request.body.docid).collection("userForums").add(request.body).then(() =>{
+            response.send("Saved in the database");
+        });
+    });
+})
+
 exports.deletecomment = functions.https.onRequest((request, response) => {
 	cors(request, response, () => {
 	// your function body here - use the provided req and res from cors

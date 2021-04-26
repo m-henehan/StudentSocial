@@ -2,15 +2,8 @@
 function getAllForums() {
     console.log("getAllForums entered");
 	
-	let docId = extractModule(window.location.toString());
+	let docId = getCookie('docid');
 
-    function extractModule(str)
-    {
-        let leftBound = str.indexOf("?") + 1;
-        let rightBound = str.indexOf("&");
-        let id = str.substring(leftBound, rightBound);
-		return id;
-    }
 	
     let xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/getAllForums');
@@ -48,7 +41,7 @@ function getAllForums() {
                     //if the user presses the "OK" button display the message "Javascript is cool!!"
                     if (theAnswer) {
 
-                        window.location.href = "./createAForum.html"+"?" +docId+ "&"+"'";
+                        window.location.href = "./createAForum.html";
                     }
                 } else {
                     verifyAlreadyMember();

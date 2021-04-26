@@ -13,7 +13,7 @@ function createUserObj(){
             if (xhr.status === OK) {
                 let docId = JSON.parse(xhr.responseText);
                 document.cookie = "docid =" + docId;
-                window.location.href = "./firstform.html"+"?" +docId+ "&"+"'";
+                window.location.href = "./joinForumSearchbar.html";
             } else {
                 console.log('Error: ' + xhr.status);
             }

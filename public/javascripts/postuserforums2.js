@@ -1,9 +1,20 @@
 // POST comments
-function postUserForums() {
-	let userId = getCookie('docid');
+function postUserForums2(fType) {
+	let docId = getCookie('docid');
+	
+	let modName = extractModule(window.location.toString());
 
+    function extractModule(str)
+    {
+        let leftBound = str.indexOf("?") + 1;
+        let rightBound = str.indexOf("&");
+        let fname = str.substring(leftBound, rightBound);
+		fname = fname.replace(/%20/g, " ");
+		return fname;
+    }
+	
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/postuserforums'+ "?id=" + userId);
+    xhr.open('POST', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/postuserforums'+ "?id=" + docId);
 
     xhr.setRequestHeader("Content-type", "application/json");
     // Track the state changes of the request.
@@ -20,6 +31,6 @@ function postUserForums() {
     };
   
     xhr.send(JSON.stringify(
-	{"forumTitle": document.getElementById('forumTitle').value, "forumType": document.getElementById("forumType").value}
+	{"forumTitle": modName, "forumType": fType}
 ));
 }

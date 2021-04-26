@@ -1,6 +1,6 @@
-function getUserForums(id)
+function getUserForums()
 {
-   alert("starting getUserForms, id ="+id);
+   let id = getCookie('docid');
    
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/getuserforums' + "?id=" + id);
@@ -16,20 +16,23 @@ function getUserForums(id)
                 var sHTML = "";
 				var url = "";
 				var fTitle ="";
-                var data = JSON.parse(xhr.responseText);
-                for (var i = 0; i < data.length; i++) {
-					fTitle = data[i].forumTitle
-					fTitle = fTitle.replace(/ /g, "%20");
-						url = "location.href="+"'"+"./postPage.html"+"?" +fTitle+ "&"+"'";
-                        sHTML += "<button onclick="+url+" id="+data[i].forumTitle+">" + data[i].forumTitle+ "</button>";
-                        
-                }
+				if(JSON.parse(xhr.responseText) === null){
+					sHTML += "You are not subscribed to any forums, try searching for one!";
+				}
+				else{
+					var data = JSON.parse(xhr.responseText);
+					for (var i = 0; i < data.length; i++) {
+						fTitle = data[i].forumTitle
+						fTitle = fTitle.replace(/ /g, "%20");
+							url = "location.href="+"'"+"./postPage.html"+"?" +fTitle+ "&"+"'";
+							sHTML += "<button onclick="+url+" id="+data[i].forumTitle+">" + data[i].forumTitle+ "</button>";
+							
+					}
+				}
 				var url2 = "location.href="+"'"+"./createAForum.html"+"?" +id+ "&"+"'";
 			sHTML += "<button onclick="+url2+">Create a Forum</button>";
 			insertButtonsHere.innerHTML = sHTML;
             } else {
-				sHTML += "You are not subscribed to any forums, try searching for one!";
-				insertButtonsHere.innerHTML = sHTML;
                 console.log('Error: ' + xhr.status);
             }
         }

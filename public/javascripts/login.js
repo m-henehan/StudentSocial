@@ -6,10 +6,10 @@ function login()
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            document.cookie = "accessToken=" + user.za;
-            document.cookie = "uid=" + user.uid;
+            document.cookie = "accessToken=" + user.za+"; ";
+            document.cookie = "uid=" + user.uid+"; ";
             console.log("User object", user);
-            window.location.href = "./userHomePage.html"+"?" +user.uid+ "&"+"'";
+            window.location.href = "./userHomePage.html";
             // ...
         })
         .catch((error) => {

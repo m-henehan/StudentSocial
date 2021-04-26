@@ -20,17 +20,17 @@ xhr.onreadystatechange = function () {
 			{
 				var forumT = (data[i].forumTitle).toLowerCase();
 				var moduleC = (data[i].moduleCode).toLowerCase();
-				if(forumT === searchValue || moduleC === searchValue){
+				//searchbar returns any forums that contain the input search item
+				if(forumT.indexOf(searchValue) !== -1 || moduleC.indexOf(searchValue) !== -1){
 					resultFound = true;
 					var fTitle = data[i].forumTitle
 					fTitle = fTitle.replace(/ /g, "%20");
 					url = "location.href="+"'"+"./postPage.html"+"?" +fTitle+ "&"+"'";
-					sHTML += "<button onclick="+url+" id="+data[i].forumTitle+">" + data[i].forumTitle+ "</button>";
+					sHTML += "<button class='btn btn-block' onclick="+url+" id="+data[i].forumTitle+">" + data[i].forumTitle+ "</button> <br>";
 			}
 			}
 			if(resultFound == false){
-				sHTML += "No result found! Why don't you create a new forum:";
-				sHTML += "<button onclick="+url2+">Create a Forum</button>";
+				sHTML += "<div id='noResult'>  No result found. Check your spelling for mistakes and try again, or create a forum <a href='https://combined-projects-6cc05.web.app/createAForum.html'>here</a></div>";
 			}
 			insertButtonsHere.innerHTML = sHTML;
         } else {
