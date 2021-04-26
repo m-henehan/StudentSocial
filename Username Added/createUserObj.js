@@ -20,6 +20,6 @@ function createUserObj(){
         }
     };
     // alert("details:  email: "+ email + "password: "+ password+ "uid: "+  uid);
-    xhr.send(JSON.stringify({"email":document.getElementById("regEmail").value, "password":document.getElementById("regPassword1").value,
+    xhr.send(JSON.stringify({"email":document.getElementById("regEmail").value,
 	"username":document.getElementById("regUsername").value, "uid" : getCookie('uid')}));
 }
