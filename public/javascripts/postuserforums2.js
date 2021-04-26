@@ -23,7 +23,7 @@ function postUserForums2(fType) {
         var OK = 200; // status 200 is a successful return.
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                
+                getSubscription();
             } else {
                 console.log('Error: ' + xhr.status); // An error occurred during the request.
             }

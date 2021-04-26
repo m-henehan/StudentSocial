@@ -66,7 +66,10 @@ exports.getuserforums = functions.https.onRequest((request, response) =>
             }
 
             snapshot.forEach(doc => {
-                myData.push(doc.data());
+                let docObj = {};
+				docObj.id = doc.id;
+				myData.push(Object.assign(docObj, doc.data()));
+
             })
             response.send(myData);
         });
@@ -141,6 +144,20 @@ exports.deletecomment = functions.https.onRequest((request, response) => {
 	cors(request, response, () => {
 	// your function body here - use the provided req and res from cors
 	admin.firestore().collection("testCollect").doc(request.query.id).delete().then(function()
+	{
+		response.send("Document successfully deleted!");
+	})
+	});
+});
+
+exports.deleteforum = functions.https.onRequest((request, response) => {
+	let id_filter = []
+	id_filter = (request.query.id).split(',');
+	let forumId = id_filter[0];
+	let docId = id_filter[1];
+	cors(request, response, () => {
+	// your function body here - use the provided req and res from cors
+	admin.firestore().collection("users").doc(docId).collection("userForums").doc(forumId).delete().then(function()
 	{
 		response.send("Document successfully deleted!");
 	})

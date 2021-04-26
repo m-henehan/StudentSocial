@@ -24,16 +24,18 @@
 	<script src="./javascripts/getdocid.js"></script>
 	<script src="javascripts/accessSecureAPI.js"></script>
 	<script src="javascripts/getforumtype2.js"></script>
-	
+	<script src="javascripts/getsubscription.js"></script>
+	<script src="javascripts/deleteforum.js"></script>
+	<script src="javascripts/gettitle.js"></script>
 </head>
-<body onload='getDocId();getFilterTags(); getcomments();'>
+<body onload='getDocId();getSubscription();getFilterTags(); getcomments();'>
 <form name = "test1">
 <input type="hidden" name="addStr">
 </form>
-<button onclick="getForumType2()">Click me</button>
+<div id="pageTitle"></div>
 <div class="form-group">
 <input type="hidden" class="form-control" id="forumType" name="forumType" value="">
-<br>
+<div id="subscription"></div>
 <div id='postTags'></div>
 <div id="posts"></div>
 <div id="comments"></div>
