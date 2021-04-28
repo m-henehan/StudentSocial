@@ -28,9 +28,6 @@ function getFilteredPosts(selectObject)
                
                 let data = JSON.parse(xhr.responseText);
                 for (let i = 0; i < data.length; i++) {
-					let forumUrl = modName.replace(/ /g, "%20");
-					let url2 = "location.href="+"'"+"./chatPage.html"+"?" +forumUrl+ "&"+"'";
-					sHTML += "<button onclick="+url2+" id="+modName+">Create a Post</button><br>";
                     if(data[i].module === modName && data[i].pTag === tag){
 						sHTML += "<div id='textBubble'>";
 						sHTML += "<p> Username: " + data[i].username+ "</p>";

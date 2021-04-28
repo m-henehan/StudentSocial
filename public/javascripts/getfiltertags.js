@@ -54,7 +54,7 @@ function getFilterTags()
 		myString += "<option value='Training'>Training</option>";
 		myString += "<option value='Match'>Match</option>";
 		myString += "<option value='General Discussion'>Gerneral Discussion</option>";
-		myString += "</select><br>";
+		myString += "</select><button onclick=getcomments()>Undo Filter</button><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 }

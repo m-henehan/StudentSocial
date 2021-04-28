@@ -25,9 +25,6 @@ function getcomments()
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
                 let data = JSON.parse(xhr.responseText);
-				let forumUrl = modName.replace(/ /g, "%20");
-				let url2 = "location.href="+"'"+"./chatPage.html"+"?" +forumUrl+ "&"+"'";
-				sHTML += "<button onclick="+url2+" id="+modName+">Create a Post</button><br>";
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].module === modName){
 						sHTML += "<div id='textBubble'>";

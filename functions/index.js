@@ -59,11 +59,11 @@ exports.getuserforums = functions.https.onRequest((request, response) =>
     cors(request, response, () => {
         let myData = []
         return admin.firestore().collection("users").doc(request.query.id).collection("userForums").get().then((snapshot) => {
-            if(snapshot.empty) {
+           /** if(snapshot.empty) {
                 console.log('No matching documents.');
                 response.send('No data in database');
                 return;
-            }
+            }*/
 
             snapshot.forEach(doc => {
                 let docObj = {};
@@ -366,4 +366,29 @@ exports.addUserForums = functions.https.onRequest((request, response) =>
             response.send("Saved in the database");
         });
     });
+})
+
+exports.checkusernames = functions.https.onRequest((request, response) =>
+{
+
+//connect to our Firestore database
+    cors(request, response, () => {
+        let myData = []
+        console.log("request: "+request.body.toString());
+        admin.firestore().collection("users").get().then((snapshot) => {
+            if(snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No data in database');
+                return;
+            }
+
+            snapshot.forEach(doc => {
+                let docObj = {};
+                docObj.id = doc.id;
+                myData.push(Object.assign(docObj, doc.data()));
+            })
+            console.log("myData: "+myData[0].code);
+            response.send(myData);
+        });
+    })
 })

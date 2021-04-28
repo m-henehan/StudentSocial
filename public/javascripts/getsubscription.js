@@ -3,6 +3,8 @@ function getSubscription()
    let userid = getCookie('docid');
    let modName = extractModule(window.location.toString());
    alert("modName: " +modName);
+   let sHTML = "";
+   let forumFound = false;
 
     function extractModule(str)
     {
@@ -23,9 +25,6 @@ function getSubscription()
         var OK = 200; // status 200 is a successful return
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-                var sHTML = "";
-				var dataId;
-				let forumFound = false;
 				var data = JSON.parse(xhr.responseText);
 				for (var i = 0; i < data.length; i++) {
 					if(modName === data[i].forumTitle){
@@ -34,16 +33,20 @@ function getSubscription()
 						alert(data[i].id);
 						let buttonLink = "deleteForum(" + "'" + data[i].id + "'" + ")";
 						sHTML += "<button onclick="+buttonLink+">Unsubscribe</button>";
+						break;
 					}
 				}
 				if(forumFound === false){
-					sHTML += "<button onclick='getForumType2()'>Subscribe</button>";
+				sHTML += "<button onclick='getForumType2()'>Subscribe</button>";
 				}
 				subscription.innerHTML = sHTML;
             } else {
                 console.log('Error: ' + xhr.status);
             }
+			
         }
+		
     }
+	
     xhr.send(null);
 }

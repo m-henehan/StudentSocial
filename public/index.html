@@ -8,6 +8,7 @@
     <script src = "./javascripts/getAllForums.js"></script>
     <script src = "./javascripts/createUserObj.js"></script>
     <script src="javascripts/accessSecureAPI.js"></script>
+	<script src="javascripts/checkUsernames.js"></script>
 </head>
 <body>
 
@@ -62,6 +63,11 @@
                 <label for="regEmail"><b>Email</b></label>
                 <input type="text" id="regEmail" placeholder="Enter Email" required/>
             </div>
+			
+			<div class="form-group">
+                <label for="regUsername"><b>Username</b></label>
+                <input type="text" id="regUsername" placeholder="Enter Username" required/>
+            </div>
 
             <div class="form-group">
                 <label for="regPassword1"><b>Password</b></label>
@@ -74,7 +80,7 @@
             </div>
 
             <div class="clearfix">
-                <button type="button" class="signup" onclick="register()">Sign Up</button>
+                <button type="button" class="signup" onclick="checkUsernames()">Sign Up</button>
                 <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </div>

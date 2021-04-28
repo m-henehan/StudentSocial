@@ -13,6 +13,10 @@ function createUserObj(){
             if (xhr.status === OK) {
                 let docId = JSON.parse(xhr.responseText);
                 document.cookie = "docid =" + docId;
+				let s2 = "";
+				s2 = "username="+document.getElementById("regUsername").value+'; ';
+				document.cookie = s2;
+				alert(document.cookie);
                 window.location.href = "./joinForumSearchbar.html";
             } else {
                 console.log('Error: ' + xhr.status);
@@ -20,5 +24,5 @@ function createUserObj(){
         }
     };
     // alert("details:  email: "+ email + "password: "+ password+ "uid: "+  uid);
-    xhr.send(JSON.stringify({"email":document.getElementById("regEmail").value, "password":document.getElementById("regPassword1").value, "uid" : getCookie('uid')}));
+    xhr.send(JSON.stringify({"email":document.getElementById("regEmail").value, "username":document.getElementById("regUsername").value, "uid" : getCookie('uid')}));
 }

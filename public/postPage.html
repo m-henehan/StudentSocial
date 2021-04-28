@@ -26,20 +26,21 @@
 	<script src="javascripts/getforumtype2.js"></script>
 	<script src="javascripts/getsubscription.js"></script>
 	<script src="javascripts/deleteforum.js"></script>
-	<script src="javascripts/gettitle.js"></script>
+	<script src="javascripts/loadpostpage.js"></script>
 	<script src="javascripts/getusername.js"></script>
 </head>
-<body onload='getTitle();getDocId();getSubscription();getFilterTags(); getcomments();'>
+<body onload='loadPostPage();'>
 <form name = "test1">
 <input type="hidden" name="addStr">
 </form>
-<div id="pageTitle"></div>
 <div class="form-group">
 <input type="hidden" class="form-control" id="forumType" name="forumType" value="">
+<div id="pageTitle"></div>
 <div id="subscription"></div>
+<div id="createPostButton"></div>
 <div id='postTags'></div>
 <div id="posts"></div>
 <div id="comments"></div>
-
+</div>
 </body>
 </html>
