@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./javascripts/postforum.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create a new forum</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/firstform.css"/>
+    <script src="./javascripts/createAForum.js"></script>
+    <script src="./javascripts/postuserforums.js"></script>
+    <script src="./javascripts/getdocid.js"></script>
+    <script src="javascripts/accesSecureAPI.js"></script>
+</head>
+<body>
+
+<form name = "test1">
+    <input type="hidden" name="addStr">
+<div class="login">
+    <div class="login-header">
+        <h1b>Create a New Forum</h1b>
+    </div>
+
+    <div class="login-form">
+        <div class="h3bold">To create a new forum, enter the required details below.<br></div>
+        <br>
+
+        <form>
+            <h3>Select a Forum Type:</h3>
+            <div class="form-group">
+                    <select class="dropdown1" id="forumType" name="forumType" onchange="showForum();">
+                    <option value="-1">--</option>
+                    <option value="Module">Module</option>
+                    <option value="Club/Society">Club/Society</option>
+                    </select>
+                <br>
+                <div id='textInputs'></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
