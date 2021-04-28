@@ -1,7 +1,10 @@
 function postcomments(){
     let modName = extractModule(window.location.toString());
 	let likes = 0;
-
+	
+	let username = getCookie('username');
+	alert("username:" +username);
+	
     function extractModule(str)
     {
         let leftBound = str.indexOf("?") + 1;
@@ -29,6 +32,6 @@ function postcomments(){
         }
     };
     xhr.send(JSON.stringify({"pTag": document.getElementById('postTag').value, "pTitle": document.getElementById('postTitle').value, 
-	"pText": document.getElementById('postText').value, "module": modName, "likes": likes}
+	"pText": document.getElementById('postText').value, "module": modName, "likes": likes, "username": username}
     ));
 }

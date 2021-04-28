@@ -2,15 +2,7 @@
 function getUsers()
 {
 	alert("running getUsers()");
-	let userId = extractModule(window.location.toString());
-	alert("userId = "+userId);
-    function extractModule(str)
-    {
-        let leftBound = str.indexOf("?") + 1;
-        let rightBound = str.indexOf("&");
-        let id = str.substring(leftBound, rightBound);
-		return id;
-    }
+	let userId = getCookie('uid');
 	
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/getusers');

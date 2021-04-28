@@ -1,3 +1,9 @@
+function loadHomePage(){
+	getDocId();
+	alert("starting getUserForums");
+	let myVar = setTimeout(getUserForums, 2000);
+}
+
 function getUserForums()
 {
    let id = getCookie('docid');

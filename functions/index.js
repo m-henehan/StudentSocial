@@ -9,7 +9,7 @@ exports.getcomments = functions.https.onRequest((request, response) =>
     //connect to our Firestore database
     cors(request, response, () => {
         let myData = []
-        admin.firestore().collection("testCollect").get().then((snapshot) => {
+        admin.firestore().collection("posts").get().then((snapshot) => {
             if(snapshot.empty) {
                 console.log('No matching documents.');
                 response.send('No data in database');
@@ -36,7 +36,7 @@ exports.postcomments = functions.https.onRequest((request, response) =>
 		const currentTime = admin.firestore.Timestamp.now();
 		request.body.timestamp = currentTime;
 
-        admin.firestore().collection("testCollect").add(request.body).then(() =>{
+        admin.firestore().collection("posts").add(request.body).then(() =>{
             response.send("Saved in the database");
         });
     });
@@ -143,7 +143,7 @@ exports.postuserforums2 = functions.https.onRequest((request, response) =>
 exports.deletecomment = functions.https.onRequest((request, response) => {
 	cors(request, response, () => {
 	// your function body here - use the provided req and res from cors
-	admin.firestore().collection("testCollect").doc(request.query.id).delete().then(function()
+	admin.firestore().collection("posts").doc(request.query.id).delete().then(function()
 	{
 		response.send("Document successfully deleted!");
 	})
@@ -169,7 +169,7 @@ exports.getlikes = functions.https.onRequest((request, response) =>
     //connect to our Firestore database
     cors(request, response, () => {
         let myData = []
-        admin.firestore().collection("testCollect").get().then((snapshot) => {
+        admin.firestore().collection("posts").get().then((snapshot) => {
             if(snapshot.empty) {
                 console.log('No matching documents.');
                 response.send('No data in database');
@@ -190,7 +190,7 @@ exports.getlikes = functions.https.onRequest((request, response) =>
 exports.putlikes = functions.https.onRequest((request, response) =>
 {
     cors(request, response, () => {
-        admin.firestore().collection("testCollect").doc(request.query.id).update(request.body).then(function()
+        admin.firestore().collection("posts").doc(request.query.id).update(request.body).then(function()
 		{
             response.send("Document successfully updated!");
         })

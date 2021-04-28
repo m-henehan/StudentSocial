@@ -1,8 +1,8 @@
-function getDocId()
+// GET comments
+function getUsername()
 {
-	alert("in getDocId");
+	alert("running getUsers()");
 	let userId = getCookie('uid');
-	alert("userId: "+userId);
 	
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/getusers');
@@ -18,13 +18,8 @@ xhr.onreadystatechange = function () {
 			for(var i=0; i<data.length; i++)
 			{
 				if(userId === data[i].uid){
-					let s = "";
-					s += "username="+data[i].username+"; ";
-					document.cookie = s;
-					let s2 = "";
-					s2 = "docid="+data[i].id+'; ';
-					document.cookie = s2;
-					alert(document.cookie);
+					alert("running getUserForms");
+					 return data[i].username;
 				}
 			}
         } else {

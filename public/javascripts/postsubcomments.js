@@ -1,5 +1,6 @@
 function postSubComments(){
 
+	let username = getCookie('username');
 	let postId = extractModule(window.location.toString());
 
     function extractModule(str)
@@ -27,6 +28,6 @@ function postSubComments(){
             }
         }
     };
-    xhr.send(JSON.stringify({"postId": postId, "commentText": document.getElementById('commentText').value}
+    xhr.send(JSON.stringify({"postId": postId, "username":username, "commentText": document.getElementById('commentText').value}
     ));
 }

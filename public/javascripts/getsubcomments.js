@@ -27,7 +27,7 @@ function getSubComments(id)
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].postId === postId){
 						sHTML += "<div id='textBubble'>";
-						sHTML += "<p> comment: " + data[i].commentText+ "</p></div>";
+						sHTML += "<p>"+data[i].username+": " + data[i].commentText+ "</p></div>";
                 }}
 				document.getElementById("comments").innerHTML = sHTML;
             } else {

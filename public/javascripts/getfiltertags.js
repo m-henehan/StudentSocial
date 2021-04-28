@@ -46,7 +46,7 @@ function getFilterTags()
 		myString += "<option value='Assignment'>Assignment</option>";
 		myString += "<option value='Exam'>Exam</option>";
 		myString += "<option value='General Discussion'>General Discussion</option>";
-		myString += "</select><br>";
+		myString += "</select><button onclick=getcomments()>Undo Filter</button><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 	if (fType == "Club/Society"){

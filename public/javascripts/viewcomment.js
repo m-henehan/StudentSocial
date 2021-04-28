@@ -1,5 +1,6 @@
 function viewComment()
 {
+	let username = getCookie('username');
 	let postId = extractModule(window.location.toString());
 
     function extractModule(str)
@@ -25,11 +26,14 @@ function viewComment()
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].id === postId){
 						sHTML += "<div id='textBubble'>";
+						sHTML += "<p> Username: " + data[i].username+ "</p>";
 						sHTML += "<p> Tag: " + data[i].pTag+ "</p>";
 						sHTML += "<p> Title: " + data[i].pTitle+ "</p>";
 						sHTML += "<p> Text: " + data[i].pText+ "</p>";
 						sHTML += "<p> Likes: " + data[i].likes+ "</p>";
-						sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
+						if(data[i].username === username){
+							sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
+						}
 						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br></div>";
 						
                 }}

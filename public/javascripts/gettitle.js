@@ -1,7 +1,7 @@
 function getTitle(){
 	var myString = "";
 	
-	myString = extractModule(window.location.toString());
+	myString += extractModule(window.location.toString());
 	
 	pageTitle.innerHTML = myString;
 
