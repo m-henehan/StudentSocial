@@ -1,0 +1,24 @@
+exports.checkusernames = functions.https.onRequest((request, response) =>
+{
+
+//connect to our Firestore database
+    cors(request, response, () => {
+        let myData = []
+        console.log("request: "+request.body.toString());
+        admin.firestore().collection("users").get().then((snapshot) => {
+            if(snapshot.empty) {
+                console.log('No matching documents.');
+                response.send('No data in database');
+                return;
+            }
+
+            snapshot.forEach(doc => {
+                let docObj = {};
+                docObj.id = doc.id;
+                myData.push(Object.assign(docObj, doc.data()));
+            })
+            console.log("myData: "+myData[0].code);
+            response.send(myData);
+        });
+    })
+})
