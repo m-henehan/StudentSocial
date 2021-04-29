@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/firstform.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/dialog.css"/>
+    <script src="./javascripts/getAllForums.js"></script>
+    <script src="./javascripts/utils.js"></script>
+    <script src="./javascripts/createForum.js"></script>
+    <script src="./javascripts/accessSecureAPI.js"></script>
+    <script>window.onload = utils;</script>
+</head>
+<body>
+
+<div class="title">
+    <span class="purple">Student</span><span class="white">Social</span>
+</div>
+
+<div class="userHome">
+    <div class="fullWidth">
+        <div class="lhs"><div class="uh3">Go to a module forum:</div>
+            <div id="insertModules">
+            </div>
+        </div>
+        <div class="lhs"><div class="uh3">Go to a society forum: </div>
+            <div id="insertSocieties">
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    </div>
+</div>
+
+<div class="userHomeB">
+    <div class="uh3"><span class="uh3a">Or subscribe to a new Forum:</span></div>
+    <br>
+    <br>
+    <button class="uhButtona" onclick= "switchPage()">Subscribe to a new forum</button>
+    <script>function switchPage() {window.location.href='./joinForumSearchBar.html'}</script>
+    <br>
+    <br>
+</div>
+
+
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+    <script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
+
+</body>
+</html>
