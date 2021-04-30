@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/firstform.css"/>
+    <script src="./javascripts/forumSelect.js"></script>
+    <script src="./javascripts/getuserforums.js"></script>
+    <script src="./javascripts/postcomments.js"></script>
+    <script src="./javascripts/getcomments.js"></script>
+    <script src="./javascripts/getforumtype.js"></script>
+
+</head>
+<body  onload='getForumType();'>
+<form name = "test1">
+    <input type="hidden" name="addStr">
+</form>
+<input type="hidden" class="form-control" id="forumType" name="forumType" value="">
+<div class="login">
+    <div class="login-header">
+        <h1b>Create a New Post</h1b>
+    </div>
+
+    <div class="login-form">
+        <div class="form-group">
+            <div class="h3bold">
+                <h3>Choose a tag for your post:</h3>
+                <div id='postTags'></div>
+                <h3>Title</h3>
+                <label for="postTitle"></label>
+                <input type="text" id="postTitle" name="postTitle"  value = "">
+                <label for="postText"></label>
+                <h3>Text</h3>
+            </div>
+            <textarea class="textarea" id="postText" name="postText" value = ""></textarea>
+            <br>
+            <br>
+            <div class="input-group-btn">
+                <button type="button" onclick="postcomments()" class="subButton">Post</button>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+
+
+<div id="comments"></div>
+
+</body>
+</html>
