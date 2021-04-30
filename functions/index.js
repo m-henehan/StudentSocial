@@ -9,7 +9,7 @@ exports.getcomments = functions.https.onRequest((request, response) =>
     //connect to our Firestore database
     cors(request, response, () => {
         let myData = []
-        admin.firestore().collection("posts").get().then((snapshot) => {
+        admin.firestore().collection("posts").orderBy("timestamp", "desc").get().then((snapshot) => {
             if(snapshot.empty) {
                 console.log('No matching documents.');
                 response.send('No data in database');
@@ -217,7 +217,7 @@ exports.getsubcomments = functions.https.onRequest((request, response) =>
     //connect to our Firestore database
     cors(request, response, () => {
         let myData = []
-        admin.firestore().collection("comments").get().then((snapshot) => {
+        admin.firestore().collection("comments").orderBy("timestamp").get().then((snapshot) => {
             if(snapshot.empty) {
                 console.log('No matching documents.');
                 response.send('No data in database');
@@ -388,6 +388,28 @@ exports.checkusernames = functions.https.onRequest((request, response) =>
                 myData.push(Object.assign(docObj, doc.data()));
             })
             console.log("myData: "+myData[0].code);
+            response.send(myData);
+        });
+    })
+})
+
+exports.utils = functions.https.onRequest((request, response) =>
+{
+
+    //connect to our Firestore database
+    cors(request, response, () => {
+        let myData = []
+        return admin.firestore().collection("users").doc(request.body.docid).collection("userForums").get().then((snapshot) => {
+            /* if(snapshot.empty) {
+                console.log('No matching documents.');
+                response.send({'message':'No data in database'});
+                return;
+            }*/
+            console.log("utils executing");
+            snapshot.forEach(doc => {
+                myData.push(doc.data());
+            })
+            console.log("myData: " + myData);
             response.send(myData);
         });
     })

@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/firstform.css"/>
+    <script src="./javascripts/getAllForums.js"></script>
+    <script src="./javascripts/utils.js"></script>
+    <script src="./javascripts/createAForum.js"></script>
+    <script src="./javascripts/accessSecureAPI.js"></script>
+	<script src="./javascripts/getdocid.js"></script>
 </head>
 <body onload = "loadHomePage();">
-<div class="searchBar">
-<input type="text" placeholder="Search.." name="search" id="search" value = ''>
-<button type="button" onClick="getForums();">Submit</button>
-</div>
-<div id="insertButtonsHere"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="./javascripts/forumSelect.js"></script>
-<script src="./javascripts/getusers.js"></script>
-<script src="./javascripts/getuserforums.js"></script>
-<script src="./javascripts/getcomments.js"></script>
-<script src="./javascripts/getforums.js"></script>
-<script src="./javascripts/getdocid.js"></script>
-<script src="javascripts/accessSecureAPI.js"></script>
+<div class="title">
+    <span class="purple">Student</span><span class="white">Social</span>
+</div>
+
+<div class="userHome">
+    <div class="fullWidth">
+        <div class="lhs"><div class="uh3">Go to a module forum:</div>
+            <div id="insertModules">
+            </div>
+        </div>
+        <div class="lhs"><div class="uh3">Go to a society forum: </div>
+            <div id="insertSocieties">
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    </div>
+</div>
+
+<div class="userHomeB">
+    <div class="uh3"><span class="uh3a">Or subscribe to a new Forum:</span></div>
+    <br>
+    <br>
+    <button class="uhButtona" onclick= "window.location.href='./joinForumSearchbar.html';">Subscribe to a new forum</button>
+    <br>
+    <br>
+</div>
+
 </body>
 </html>

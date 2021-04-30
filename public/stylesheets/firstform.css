@@ -12,11 +12,15 @@ body {
     font-weight: bold;
     font-size: 100px;
     top: 50px;
-    left: 72px;
+    margin-left: 72px;
 }
 
 .purple{
     color: blueviolet;
+}
+
+.lavender {
+    color: #DDA0DD;
 }
 
 .white{
@@ -30,7 +34,8 @@ h1 {
 }
 
 h1b {
-    font-size: 90px;
+    margin-top: 200px;
+    font-size: 80px;
     font-weight: bold;
     text-align: center;
     color: #DDA0DD;
@@ -41,7 +46,7 @@ h3c {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     margin-left: 10%;
 }
 
@@ -56,10 +61,12 @@ h1, h2, h3, h4, h5, h6, a {
     margin:0; padding:0;
 }
 .login {
+    text-align: center;
     margin:0 auto;
     max-width: 850px;
 }
 .login-header {
+    margin-top: 50px;
     color:#fff;
     text-align:center;
     font-size:300%;
@@ -70,23 +77,81 @@ h1, h2, h3, h4, h5, h6, a {
 .subButton {
     color: #DDA0DD;
     background-color: #474747;
-    padding: 8px 20px;
+    width: 90%;
+    padding: 2px 20px;
     border-radius: 5px;
-    font-size: 35px;
+    text-align: center;
+    font-size: 30px;
     font-weight: bold;
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
 
+.bottom {
+    float: bottom;
+}
+
+.listButtona {
+    color: #D9B3FF;
+    background-color: #2E2E2E;
+    width: 90%;
+    height: 30px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.listButtonb {
+    color: #D9B3FF;
+    background-color: #2E2E2E;
+    width: 90%;
+    height: 30px;
+    padding: 8px 20px;
+    right: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+h3 {
+    text-align:center;
+    font-size: 30px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 .searchBar {
-    padding: 0;
+    height: 40px;
+    padding: 0px;
     width: 100%;
 }
 
-.usearchBar {
+.btn-block {
     padding: 0px;
-    margin-left: 30px;
-    width: 50%;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    font-size: 18px;
+    color: #2E2E2E;
+    background-color: #9C9C9C;
+    border-radius: 5px;
+}
+
+.dropdown1 {
+    padding: 0px;
+    width: 90%;
+    height: 40px;
+    font-size: 18px;
+    color: #440066;
+    background-color: #eee;
+    border-radius: 5px;
 }
 
 .login-form {
@@ -94,13 +159,14 @@ h1, h2, h3, h4, h5, h6, a {
     background-image: url("../photos/purple_gradient.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100% ;
+    margin-bottom: 50px;
     border-radius:10px;
     box-shadow:0px 0px 10px #000;
 }
 .login-form h3 {
     text-align:left;
-    margin-left:10%;
-    font-size: 35px;
+    margin-left: 45px;
+    font-size: 30px;
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
@@ -114,16 +180,16 @@ h1, h2, h3, h4, h5, h6, a {
     box-sizing:border-box;
     padding-top:15px;
     padding-bottom:30px;
-    margin:5% auto;
+    margin: 5% auto;
     text-align: center;
 }
 .login input[type="text"],
 .login input[type="password"] {
     max-width:800px;
-    width: 80%;
+    width: 90%;
     line-height:3em;
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
-    margin-left: 30px;
+    margin-left: 0px;
     border-radius:5px;
     border:2px solid #f2f2f2;
     outline:none;
@@ -160,10 +226,10 @@ h1, h2, h3, h4, h5, h6, a {
     cursor:pointer;
 }
 
+
 .userHome {
-    position: absolute;
+    position: fixed;
     top: 180px;
-    bottom: 60px;
     left: 72px;
     right: 72px;
     border:.5px solid #fff;
@@ -173,8 +239,37 @@ h1, h2, h3, h4, h5, h6, a {
     border-radius:10px;
     box-shadow:0px 0px 10px #000;
     box-sizing:border-box;
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    min-height: 50%;
     max-width: 90%;
+}
+
+.userHomeB {
+    position: inherit;
+    padding-top: 30px;
+    padding-left: 72px;
+    padding-right: 72px;
+    max-width: 90%;
+}
+
+.uhButtona {
+    position: absolute;
+    bottom: 50px;
+    color: #440066;
+    background-color: #888888;
+    width: 90%;
+    height: 50px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+    border: 1px solid #999;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
 .userHome input[type="text"],
@@ -206,17 +301,28 @@ h1, h2, h3, h4, h5, h6, a {
 .uh3 {
     font-size: 35px;
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    width: 100%;
     color: white;
     font-weight: bold;
     text-align: left;
 }
 
 .uh3a {
-    margin-left: 30px;
+    position: absolute;
+    bottom: 120px;
 }
 
-.uh3b {
-    margin-left: 280px;
+.lhs {
+    width: 50%;
+    float: left;
+    max-width: 50%;
+}
+
+.rhs {
+    float: left;
+    width: 50%;
+    max-width: 50%;
+    margin-left: 50%;
 }
 
 /*Media Querie*/
@@ -231,3 +337,4 @@ h1, h2, h3, h4, h5, h6, a {
     .login-button {
         margin-bottom:10px;
     }
+}
