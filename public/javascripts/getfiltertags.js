@@ -38,15 +38,16 @@ function getFilterTags()
 	function showTags(fType){
 	var myString = "";
     
-	myString += "<label for='postTag'>Filter posts by tags:</label>";
-	myString += "<select class='form-control' id='postTag' name='postTag'  onchange ='getFilteredPosts(this)'>";
+	myString += "<label for='postTag' class='subtitle'>Filter posts by tags:</label>";
+	myString += "<br>";
+	myString += "<select class='dropdown1' id='postTag' name='postTag'  onchange ='getFilteredPosts(this)'>";
 	myString += "<option value='-1'>--</option>";
 	userinput = document.getElementById("forumType").value;
 	if (fType == "Module"){
 		myString += "<option value='Assignment'>Assignment</option>";
 		myString += "<option value='Exam'>Exam</option>";
 		myString += "<option value='General Discussion'>General Discussion</option>";
-		myString += "</select><button onclick=getcomments()>Undo Filter</button><br>";
+		myString += "</select><button class='postButton' onclick=getcomments()>Undo Filter</button><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 	if (fType == "Club/Society"){
@@ -54,7 +55,7 @@ function getFilterTags()
 		myString += "<option value='Training'>Training</option>";
 		myString += "<option value='Match'>Match</option>";
 		myString += "<option value='General Discussion'>Gerneral Discussion</option>";
-		myString += "</select><button onclick=getcomments()>Undo Filter</button><br>";
+		myString += "</select><button class='postButton' onclick=getcomments()>Undo Filter</button><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 }

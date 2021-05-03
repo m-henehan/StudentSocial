@@ -1,14 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>Student Social</title>
     <link rel="stylesheet" type="text/css" href="./stylesheets/welcomeStyles.css"/>
     <script src="javascripts/register.js"></script>
     <script src="javascripts/login.js"></script>
-    <script src = "./javascripts/getAllForums.js"></script>
     <script src = "./javascripts/createUserObj.js"></script>
     <script src="javascripts/accessSecureAPI.js"></script>
 	<script src="javascripts/checkUsernames.js"></script>
+	<script src="javascripts/getdocid.js"></script>
+	<link rel="icon" type="image/png" href="./photos/icon2.png">
 </head>
 <body>
 
@@ -43,7 +46,6 @@
         <div class="container">
             <button type="button" onclick="login()">Login</button>
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw"><a href="#">Forgot password?</a></span>
         </div>
     </form>
 </div>
@@ -130,3 +132,5 @@
 <script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js?useEmulator=true"></script>
+</body>
+</html>

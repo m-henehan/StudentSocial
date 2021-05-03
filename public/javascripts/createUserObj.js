@@ -1,5 +1,4 @@
 function createUserObj(){
-    alert("createUserObj called");
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/createUserObj', true);
 
@@ -16,7 +15,6 @@ function createUserObj(){
 				let s2 = "";
 				s2 = "username="+document.getElementById("regUsername").value+'; ';
 				document.cookie = s2;
-				alert(document.cookie);
                 window.location.href = "./joinForumSearchbar.html";
             } else {
                 console.log('Error: ' + xhr.status);

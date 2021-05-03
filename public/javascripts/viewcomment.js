@@ -25,21 +25,21 @@ function viewComment()
                 let data = JSON.parse(xhr.responseText);
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].id === postId){
-						sHTML += "<div id='textBubble'>";
-						sHTML += "<p> Username: " + data[i].username+ "</p>";
-						sHTML += "<p> Tag: " + data[i].pTag+ "</p>";
-						sHTML += "<p> Title: " + data[i].pTitle+ "</p>";
-						sHTML += "<p> Text: " + data[i].pText+ "</p>";
-						sHTML += "<p> Likes: " + data[i].likes+ "</p>";
+						sHTML += "<div class='postBox'>";
+						sHTML += "<p class='postTitle'>" + data[i].pTitle+ "</p>";
+						sHTML += "<p class='username'>" + data[i].username+ ":</p>";
+						sHTML += "<p class='postContent'>" + data[i].pText+ "</p>";
+						sHTML += "<p class='username'> Tagged: " + data[i].pTag+ "<span class='tab'></span>";
+						sHTML += "Likes: " + data[i].likes+ "</p>";
 						if(data[i].username === username){
-							sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
+							sHTML += "<button class='postButton' onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
 						}
-						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br></div>";
+						sHTML += "<button class='postButton' onclick=getLikes2(" + "'" + data[i].id + "'" + ")>Like Post</button><br></div>";
 						
                 }}
 				sHTML+= "<label for='postTitle'>Comment</label>";
 				sHTML+= "<input class='form-control' type='text' id='commentText' name='commmentText'  value = ''><br>";
-				sHTML += "<button id='myButton' type='button' onClick='postSubComments();'>Submit</button>";
+				sHTML += "<button class='postButton' id='myButton' type='button' onClick='postSubComments();'>Submit</button><br><br>";
 				
 				document.getElementById("posts").innerHTML = sHTML;
 				getSubComments();

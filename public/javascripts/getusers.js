@@ -1,7 +1,6 @@
 // GET comments
 function getUsers()
 {
-	alert("running getUsers()");
 	let userId = getCookie('uid');
 	
 var xhr = new XMLHttpRequest();
@@ -18,7 +17,6 @@ xhr.onreadystatechange = function () {
 			for(var i=0; i<data.length; i++)
 			{
 				if(userId === data[i].uid){
-					alert("running getUserForms");
 					 getUserForums(data[i].id);
 				}
 			}

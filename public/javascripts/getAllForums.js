@@ -27,7 +27,6 @@ function getAllForums() {
                 console.log("modList:" + modList);
                 var found = false;
                 for (let m = 0; m < modList.length; m++) {
-                    alert("m: " + modList[m] + " search: " + search);
                     if (modList[m] === search) {
                         found = true;
                         break;
@@ -53,6 +52,5 @@ function getAllForums() {
         }
     }
 
-    alert("sending");
     xhr.send(null);
 }

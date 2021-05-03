@@ -12,12 +12,10 @@ function register()
                 document.cookie = "accessToken=" + user.za;
                 document.cookie = "uid=" + user.uid;
                 console.log("User object", user);
-                alert("Account successfully created! Logging you in!");
                 createUserObj();
                 // ...
             })
             .catch((error) => {
-                alert("Error");
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 console.log(errorMessage, errorCode);

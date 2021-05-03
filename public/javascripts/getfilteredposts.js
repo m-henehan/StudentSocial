@@ -29,18 +29,18 @@ function getFilteredPosts(selectObject)
                 let data = JSON.parse(xhr.responseText);
                 for (let i = 0; i < data.length; i++) {
                     if(data[i].module === modName && data[i].pTag === tag){
-						sHTML += "<div id='textBubble'>";
-						sHTML += "<p> Username: " + data[i].username+ "</p>";
-						sHTML += "<p> Tag: " + data[i].pTag+ "</p>";
-						sHTML += "<p> Title: " + data[i].pTitle+ "</p>";
-						sHTML += "<p> Text: " + data[i].pText+ "</p>";
-						sHTML += "<p> Likes: " + data[i].likes+ "</p>";
+						sHTML += "<div class='postBox'>";
+						sHTML += "<p class='postTitle'>" + data[i].pTitle+ "</p>";
+						sHTML += "<p class='username'>" + data[i].username+ ":</p>";
+						sHTML += "<p class='postContent'>" + data[i].pText+ "</p>";
+						sHTML += "<p class='username'> Tagged: " + data[i].pTag+ "<span class='tab'></span>";
+						sHTML += "Likes: " + data[i].likes+ "</p>";
 						if(data[i].username === username){
-							sHTML += "<button onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
+							sHTML += "<button class='postButton' onclick=deleteComment(" + "'" + data[i].id + "'" + ")>Delete Post</button>";
 						}
-						sHTML += "<button onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button><br>";
+						sHTML += "<button class='postButton' onclick=getLikes(" + "'" + data[i].id + "'" + ")>Like Post</button>";
 						let url = "location.href="+"'"+"./commentPage.html"+"?" +data[i].id+ "&"+"'";
-						sHTML += "<button onclick="+url+" id="+data[i].id+">Comments</button></div><br><br>";
+						sHTML += "<button class='postButton' onclick="+url+" id="+data[i].id+">Comments</button></div><br><br>";
                 }}
 				
 				document.getElementById("posts").innerHTML = sHTML;

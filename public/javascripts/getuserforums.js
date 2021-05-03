@@ -1,6 +1,5 @@
 function loadHomePage(){
 	getDocId();
-	alert("starting getUserForums");
 	let myVar = setTimeout(getUserForums, 2000);
 }
 

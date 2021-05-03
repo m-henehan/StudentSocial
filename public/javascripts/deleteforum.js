@@ -1,6 +1,4 @@
 function deleteForum(id){
-	alert("running delete forum");
-	alert("forum id:"+id);
 	console.log("Deleting comment");
 	let docId = getCookie('docid');
 	var xhr = new XMLHttpRequest();

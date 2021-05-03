@@ -1,7 +1,6 @@
 function loadPostPage(){
 	getTitle();
 	getCreatePost();
-	getDocId();
 	getSubscription();
 	getFilterTags(); 
 	getcomments();
@@ -21,7 +20,7 @@ function getCreatePost(){
 
 	let forumUrl = modName.replace(/ /g, "%20");
 	let url2 = "location.href="+"'"+"./chatPage.html"+"?" +forumUrl+ "&"+"'";
-	let sHTML = "<br><button onclick="+url2+" id="+modName+">Create a Post</button><br>";
+	let sHTML = "<br><button class='postButton' onclick="+url2+" id="+modName+">Create a Post</button><br>";
 	createPostButton.innerHTML = sHTML;
 }
 

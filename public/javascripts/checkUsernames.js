@@ -28,7 +28,6 @@ function checkUsernames() {
                 for (let m = 0; m < usernameList.length; m++) {
                     if (usernameList[m] === username) {
                         found = true;
-						alert(usernameList[m]);
 						alert("Username already taken. Please enter a different username.");
 						break;
                         

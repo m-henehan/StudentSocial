@@ -9,7 +9,6 @@ function verifyAlreadyMember() {
     //Track the state changes of the request
     xhr.onreadystatechange = function () {
         let modules = []
-        alert("verifyAlreadyMember started");
         console.log("started");
         let DONE = 4; //readyState 4 means the request is done
         let OK = 200; // status 200 is a successful return
@@ -23,7 +22,6 @@ function verifyAlreadyMember() {
                     console.log(data[i]);
                     modules.push(data[i].code);
                 }
-                alert("modules: " + modules);
                 console.log("modules:" + modules);
                 var found = false;
                 for (let i = 0; i < modules.length; i++) {
@@ -35,10 +33,8 @@ function verifyAlreadyMember() {
                 }
 
                 if (!found) {
-                    alert("You are joining a new module");
                     addUserForums(document.getElementById("search").value.toUpperCase());
                 } else {
-                    alert("Already subscribed");
                 }
             }
         } else {
@@ -46,7 +42,6 @@ function verifyAlreadyMember() {
             console.log('Error: ' + xhr.status);
         }
     }
-    alert("sending docid: " + getCookie('docid'));
     xhr.send(JSON.stringify({"docid": getCookie('docid')}));
 
 }

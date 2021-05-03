@@ -1,8 +1,7 @@
 function getDocId()
 {
-	alert("in getDocId");
 	let userId = getCookie('uid');
-	alert("userId: "+userId);
+	
 	
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/getusers');
@@ -24,7 +23,7 @@ xhr.onreadystatechange = function () {
 					let s2 = "";
 					s2 = "docid="+data[i].id+'; ';
 					document.cookie = s2;
-					alert(document.cookie);
+					window.location.href = "./userHomePage.html";
 				}
 			}
         } else {

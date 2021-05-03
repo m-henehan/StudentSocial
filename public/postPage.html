@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-<link rel='stylesheet' href= 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="./javascripts/forumSelect.js"></script>
-	<script src="./javascripts/getuserforums.js"></script>
+    <title>Forum Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/template-attempt.css" />
+	<link rel="stylesheet" type="text/css" href="./stylesheets/postPageStyles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="./javascripts/postcomments.js"></script>
 	<script src="./javascripts/getcomments.js"></script>
 	<script src="./javascripts/deletecomments.js"></script>
 	<script src="./javascripts/getlikes.js"></script>
 	<script src="./javascripts/putlikes.js"></script>
 	<script src="./javascripts/viewcomment.js"></script>
-	<script src="./javascripts/postsubcomments.js"></script>
-	<script src="./javascripts/getsubcomments.js"></script>
-	<script src="./javascripts/getforumtype.js"></script>
 	<script src="./javascripts/getfilteredposts.js"></script>
 	<script src="./javascripts/getfiltertags.js"></script>
 	<script src="./javascripts/postuserforums2.js"></script>
@@ -27,20 +27,93 @@
 	<script src="javascripts/getsubscription.js"></script>
 	<script src="javascripts/deleteforum.js"></script>
 	<script src="javascripts/loadpostpage.js"></script>
-	<script src="javascripts/getusername.js"></script>
+	<script src="./javascripts/logout.js"></script>
+	<link rel="icon" type="image/png" href="./photos/icon2.png">
 </head>
-<body onload='loadPostPage();'>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload='loadPostPage();'>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">Student Social</div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./userHomePage.html">HOME</a></li>
+                <li><a onclick="logout()" href="./index.html">LOG OUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <form name = "test1">
 <input type="hidden" name="addStr">
 </form>
-<div class="form-group">
-<input type="hidden" class="form-control" id="forumType" name="forumType" value="">
-<div id="pageTitle"></div>
-<div id="subscription"></div>
-<div id="createPostButton"></div>
-<div id='postTags'></div>
-<div id="posts"></div>
-<div id="comments"></div>
+<div class="centerContainer">
+    <input type="hidden" class="form-control" id="forumType" name="forumType" value="">
+        <div class="titleBox">
+            <div class="title" id="pageTitle"></div>
+            <div id="subscription"></div>
+        </div>
+        <br>
+        <div id="createPostButton"></div>
+        <div id='postTags'></div>
+        <div id="posts"></div>
+        <div id="comments"></div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="/__/firebase/8.3.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/8.3.0/firebase-auth.js"></script>
+<script src="/__/firebase/8.3.0/firebase-firestore.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js?useEmulator=true"></script>
 </body>
 </html>

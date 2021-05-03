@@ -38,8 +38,7 @@ function getForumType()
 	function showTags(fType){
 	var myString = "";
     
-	myString += "<label for='postTag'>Post Tag (select one):</label>";
-	myString += "<select class='form-control' id='postTag' name='postTag'>";
+	myString += "<select class='dropdown1' id='postTag' name='postTag'>";
 	myString += "<option value='-1'>--</option>";
 	userinput = document.getElementById("forumType").value;
 	if (fType == "Module"){

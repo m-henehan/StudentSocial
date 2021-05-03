@@ -1,13 +1,8 @@
-function loadHomePage(){
-	getDocId();
-	alert("starting utils");
-	let myVar = setTimeout(utils, 3000);
-}
+
 
 function utils() {
 
     let xhr = new XMLHttpRequest();
-    alert("xhr created");
     
     xhr.open('POST', 'https://us-central1-combined-projects-6cc05.cloudfunctions.net/utils', true);
 		
@@ -35,21 +30,21 @@ function utils() {
                 }
                 console.log("modules: "+modules);
                 console.log("societies: "+societies);
-                }
+            }
             let sHTML = "";
-                for (let i = 0; i < modules.length; i++) {
-                    let optn = modules[i];
-                    let fTitle = optn.replace(/ /g, "%20");
-                    let url = "location.href="+"'"+"./postPage.html"+"?" +fTitle+ "&"+"'";
-                    sHTML += "<button class='listButtona' onclick="+url+" id="+optn+">" + optn + "<br>";
-                }
-                insertModules.innerHTML = sHTML;
-                let tHTML = "";
-                for (let i = 0; i < societies.length; i++) {
-                    let optn = societies[i];
-                    let tTitle = optn.replace(/ /g, "%20");
-                    let url = "location.href="+"'"+"./postPage.html"+"?" +tTitle+ "&"+"'";
-                    tHTML += "<button class='listButtonb' onclick="+url+" id="+optn+">" + optn + "<br>";
+            for (let i = 0; i < modules.length; i++) {
+                let optn = modules[i];
+                let fTitle = optn.replace(/ /g, "%20");
+                let url = "location.href="+"'"+"./postPage.html"+"?" +fTitle+ "&"+"'";
+                sHTML += "<button class='listButtona' onclick="+url+" id="+optn+">" + optn + "<br>";
+            }
+            insertModules.innerHTML = sHTML;
+            let tHTML = "";
+            for (let i = 0; i < societies.length; i++) {
+                let optn = societies[i];
+                let tTitle = optn.replace(/ /g, "%20");
+                let url = "location.href="+"'"+"./postPage.html"+"?" +tTitle+ "&"+"'";
+                tHTML += "<button class='listButtonb' onclick="+url+" id="+optn+">" + optn + "<br>";
             }
             insertSocieties.innerHTML = tHTML;
         } else {
@@ -57,7 +52,6 @@ function utils() {
             console.log('Error: ' + xhr.status);
         }
     }
-    alert("sending docid: " + getCookie('docid'));
     xhr.send(JSON.stringify({"docid": getCookie('docid')}));
 
 }

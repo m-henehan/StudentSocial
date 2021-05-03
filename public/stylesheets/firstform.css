@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6, a {
     height: 30px;
     padding: 8px 20px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     font-weight: bold;
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
@@ -129,8 +129,19 @@ h3 {
 
 .searchBar {
     height: 40px;
-    padding: 0px;
+    padding: 5px;
     width: 100%;
+	font-size: 18px;
+    color: #440066;
+}
+
+.textarea {
+	height: 120px;
+    border-radius: 5px;
+    padding: 0px;
+    width: 90%;
+	font-size: 18px;
+    color: #440066;
 }
 
 .btn-block {
