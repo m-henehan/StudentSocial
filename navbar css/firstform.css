@@ -1,0 +1,363 @@
+body {
+    /*background:url('http://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg');*/
+    background: url("../photos/darkgrey1.jpg") no-repeat;
+    margin:0px;
+    background-size: cover;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+}
+
+.title{
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    position: fixed;
+    font-weight: bold;
+    font-size: 100px;
+    top: 50px;
+    margin-left: 72px;
+}
+
+.purple{
+    color: blueviolet;
+}
+
+.lavender {
+    color: #DDA0DD;
+}
+
+.white{
+    color: #ECEFF1;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    color: #DDA0DD;
+}
+
+h1b {
+    margin-top: 200px;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: #DDA0DD;
+}
+
+h3c {
+    font-size: 35px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.h3bold {
+    font-size: 30px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    margin:0; padding:0;
+}
+.login {
+    text-align: center;
+    margin:0 auto;
+    max-width: 850px;
+}
+.login-header {
+    margin-top: 50px;
+    color:#fff;
+    text-align:center;
+    font-size:300%;
+}
+/* .login-header h1 {
+   text-shadow: 0px 5px 15px #000; */
+
+.subButton {
+    color: #DDA0DD;
+    background-color: #474747;
+    width: 90%;
+    padding: 2px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.bottom {
+    float: bottom;
+}
+
+.listButtona {
+    color: #D9B3FF;
+    background-color: #2E2E2E;
+    width: 90%;
+    height: 30px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.listButtonb {
+    color: #D9B3FF;
+    background-color: #2E2E2E;
+    width: 90%;
+    height: 30px;
+    padding: 8px 20px;
+    right: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+h3 {
+    text-align:center;
+    font-size: 30px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.searchBar {
+    height: 40px;
+    padding: 0px;
+    width: 100%;
+}
+
+.btn-block {
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    font-size: 18px;
+    color: #2E2E2E;
+    background-color: #9C9C9C;
+    border-radius: 5px;
+}
+
+.dropdown1 {
+    padding: 0px;
+    width: 90%;
+    height: 40px;
+    font-size: 18px;
+    color: #440066;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.login-form {
+    border:.5px solid #fff;
+    background-image: url("../photos/purple_gradient.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+    margin-bottom: 50px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #000;
+}
+.login-form h3 {
+    text-align:left;
+    margin-left: 45px;
+    font-size: 30px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+}
+.login-form h4 {
+    text-align:left;
+    margin-left:40px;
+    color:#fff;
+}
+.login-form {
+    box-sizing:border-box;
+    padding-top:15px;
+    padding-bottom:30px;
+    margin: 5% auto;
+    text-align: center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+    max-width:800px;
+    width: 90%;
+    line-height:3em;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    margin-left: 0px;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+}
+
+.login-form input[type="button"] {
+    text-align: center;
+    height:30px;
+    width:100px;
+    background:#fff;
+    border:1px solid #f2f2f2;
+    border-radius:20px;
+    color: slategrey;
+    text-transform:uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    cursor:pointer;
+}
+.sign-up{
+    color:#f2f2f2;
+    margin-left:-70%;
+    cursor:pointer;
+    text-decoration:underline;
+}
+.no-access {
+    color:#E86850;
+    margin:20px 0px 20px -57%;
+    text-decoration:underline;
+    cursor:pointer;
+}
+.try-again {
+    color:#f2f2f2;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+
+.userHome {
+    position: fixed;
+    top: 180px;
+    left: 72px;
+    right: 72px;
+    border:.5px solid #fff;
+    background-image: url("../photos/purple_gradient.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #000;
+    box-sizing:border-box;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    min-height: 50%;
+    max-width: 90%;
+}
+
+.userHomeB {
+    position: inherit;
+    padding-top: 30px;
+    padding-left: 72px;
+    padding-right: 72px;
+    max-width: 90%;
+}
+
+.uhButtona {
+    position: absolute;
+    bottom: 50px;
+    color: #440066;
+    background-color: #888888;
+    width: 90%;
+    height: 50px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+    border: 1px solid #999;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.userHome input[type="text"],
+.userHome input[type="password"] {
+    max-width:800px;
+    width: 80%;
+    line-height:3em;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    margin:0px 0px;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+}
+
+.userHome input[type="button"] {
+    text-align: center;
+    height:30px;
+    width:100px;
+    background:#fff;
+    border:1px solid #f2f2f2;
+    border-radius:20px;
+    color: slategrey;
+    text-transform:uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    cursor:pointer;
+}
+
+.uh3 {
+    font-size: 35px;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+.uh3a {
+    position: absolute;
+    bottom: 120px;
+}
+
+.lhs {
+    width: 50%;
+    float: left;
+    max-width: 50%;
+}
+
+.rhs {
+    float: left;
+    width: 50%;
+    max-width: 50%;
+    margin-left: 50%;
+}
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+    .login-form h3 {
+        text-align:center;
+        margin:0;
+    }
+    .sign-up, .no-access {
+        margin:10px 0;
+    }
+    .login-button {
+        margin-bottom:10px;
+    }
+}
+
+  .navbar {
+    margin-bottom: 0;
+	background-color: #474747;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #7130a1 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
