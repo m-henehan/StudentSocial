@@ -1,0 +1,186 @@
+
+
+body {
+    background-image: url("../photos/background1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #888888;
+}
+
+.title{
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    position: fixed;
+    font-weight: bold;
+    font-size: 10vw;
+    top: 15vw;
+    left: 2vw;
+}
+
+.purple{
+    color: blueviolet;
+}
+
+.white{
+    color: #ECEFF1;
+}
+
+.button1{
+    position: relative;
+    color: blueviolet;
+    background-color: white;
+    padding: .8vw 3vw;
+    border-radius: .5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    left:5vw;
+    top: 400px;
+}
+
+.button2{
+    position: relative;
+    color: blueviolet;
+    background-color: white;
+    padding: .8vw 3vw;
+    border-radius: .5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    left:8vw;
+    top: 400px;
+}
+
+.textBox {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5vw;
+    background-color: blueviolet;
+    padding:1vw;
+
+    box-shadow: 0px 0px 30px 30px blueviolet;
+    /* in order: x offset, y offset, blur size, spread size, color */
+    /* blur size and spread size are optional (they default to 0) */
+}
+
+
+/*styles of input fields*/
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: #D9B3FF;
+}
+
+/* Set a style for all buttons */
+button {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: blueviolet;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.miniTitle
+{
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    position: relative;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    padding: 16px;
+    background-color: #A9A9A9;
+    font-size: 20px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #A9A9A9;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid black;
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 480px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+
+	.modal-content {
+		width: 90%;
+	}
+	.miniTitle {
+		font-size: 40px;
+	}
+}
