@@ -142,6 +142,7 @@ h3 {
     color: #2E2E2E;
     background-color: #9C9C9C;
     border-radius: 5px;
+	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 }
 
 .dropdown1 {
@@ -347,9 +348,10 @@ h3 {
     border-color: transparent;
     color: #fff !important;
   }
-
-/*Media Querie*/
-@media only screen and (min-width : 150px) and (max-width : 480px){
+  
+  /*Media Querie*/
+@media screen and (max-width: 480px){
+	
     .login-form h3 {
         text-align:center;
         margin:0;
@@ -362,28 +364,34 @@ h3 {
     }
 	
 	.title{
-		  font-size: 50px;
+		font-size: 50px;
 	  }
 	  
-	  .uh3 {
+	.uh3 {
 		font-size: 15px;
 		text-align: center;
 	  }
 	  
-	  .uh3a {
-		  text-align: left;
-		  margin-left: -100px;
+	.uh3a {
+		text-align: left;
+		margin-left: -100px;
 	  }
-	  .uhButtona {
+	.uhButtona {
 		width: 68%;
 		padding: 2px 2px;
 		font-size: 20px;
 	  }
-	  .listButtona {
-		  font-size: 8px;
+	.listButtona {
+		font-size: 8px;
 	  }
-	  body {
-		  background-size: auto;
+	body {
+		background-size: auto;
 	  }
-
+	  
+	h1b {
+		font-size: 40px;
+	  }
+	.h3bold {
+		font-size: 20px;
+	}
 }
