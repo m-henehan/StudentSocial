@@ -24,7 +24,7 @@ function utils() {
                         console.log(data[i]);
                         modules.push(data[i].forumTitle);
                     }
-                    else if(data[i].forumType === "Society"){
+                    else if(data[i].forumType === "Club/Society"){
                         societies.push(data[i].forumTitle);
                     }
                 }
