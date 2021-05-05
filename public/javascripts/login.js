@@ -13,6 +13,7 @@ function login()
             // ...
         })
         .catch((error) => {
+			alert("Invalid email address or password entered.");
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode, errorMessage);

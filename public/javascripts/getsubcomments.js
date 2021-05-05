@@ -37,4 +37,6 @@ function getSubComments(id)
     }
     xhr.send(null);
 	
+	// Invokes getSubComments every minute
+	setInterval(getSubComments, 60000);
 }

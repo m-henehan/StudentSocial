@@ -42,7 +42,9 @@ function getFilteredPosts(selectObject)
 						let url = "location.href="+"'"+"./commentPage.html"+"?" +data[i].id+ "&"+"'";
 						sHTML += "<button class='postButton' onclick="+url+" id="+data[i].id+">Comments</button></div><br><br>";
                 }}
-				
+				if(tag === '-1'){
+					getcomments();
+				}
 				document.getElementById("posts").innerHTML = sHTML;
             } else {
                 console.log('Error: ' + xhr.status);

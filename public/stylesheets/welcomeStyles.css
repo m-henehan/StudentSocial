@@ -1,5 +1,3 @@
-
-
 body {
     background-image: url("../photos/background1.jpg");
     background-position: center center;
@@ -168,7 +166,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 480px) {
     span.psw {
         display: block;
         float: none;
@@ -176,4 +174,11 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+
+	.modal-content {
+		width: 90%;
+	}
+	.miniTitle {
+		font-size: 40px;
+	}
 }

@@ -130,6 +130,11 @@ body {
     color: white;
 }
 
+.enterComment{
+	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    color: white
+}
+
 .navbar {
     margin-bottom: 0;
 	background-color: #474747;
@@ -152,3 +157,17 @@ body {
     border-color: transparent;
     color: #fff !important;
   }
+  
+    @media screen and (max-width: 480px){
+	.postButton {
+		width: 180px;
+	}
+	.subscribeBox {
+		width: 150px;
+		margin-left: 150px;
+	}
+	body {
+		background-size: auto;
+	  }
+
+}

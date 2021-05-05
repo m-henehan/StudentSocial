@@ -37,7 +37,7 @@ function viewComment()
 						sHTML += "<button class='postButton' onclick=getLikes2(" + "'" + data[i].id + "'" + ")>Like Post</button><br></div>";
 						
                 }}
-				sHTML+= "<label for='postTitle'>Comment</label>";
+				sHTML+= "<h3 class='enterComment'>Enter comment</h3>";
 				sHTML+= "<input class='form-control' type='text' id='commentText' name='commmentText'  value = ''><br>";
 				sHTML += "<button class='postButton' id='myButton' type='button' onClick='postSubComments();'>Submit</button><br><br>";
 				

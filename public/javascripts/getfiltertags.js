@@ -47,7 +47,7 @@ function getFilterTags()
 		myString += "<option value='Assignment'>Assignment</option>";
 		myString += "<option value='Exam'>Exam</option>";
 		myString += "<option value='General Discussion'>General Discussion</option>";
-		myString += "</select><button class='postButton' onclick=getcomments()>Undo Filter</button><br>";
+		myString += "</select><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 	if (fType == "Club/Society"){
@@ -55,7 +55,7 @@ function getFilterTags()
 		myString += "<option value='Training'>Training</option>";
 		myString += "<option value='Match'>Match</option>";
 		myString += "<option value='General Discussion'>Gerneral Discussion</option>";
-		myString += "</select><button class='postButton' onclick=getcomments()>Undo Filter</button><br>";
+		myString += "</select><br>";
 		document.getElementById('postTags').innerHTML = myString;
 	}
 }

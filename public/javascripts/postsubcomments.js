@@ -30,4 +30,6 @@ function postSubComments(){
     };
     xhr.send(JSON.stringify({"postId": postId, "username":username, "commentText": document.getElementById('commentText').value}
     ));
+	
+	document.getElementById('commentText').value ="";
 }

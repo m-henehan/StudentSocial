@@ -30,7 +30,7 @@ xhr.onreadystatechange = function () {
 			}
 			}
 			if(resultFound == false){
-				sHTML += "<div id='noResult'>  No result found. Check your spelling for mistakes and try again, or create a forum <a href='https://combined-projects-6cc05.web.app/createAForum.html'>here</a></div>";
+				sHTML += "<div id='noResult' class='textBubble'>  No result found. Check your spelling for mistakes and try again, or create a forum <a href='https://combined-projects-6cc05.web.app/createAForum.html'>here</a></div>";
 			}
 			insertButtonsHere.innerHTML = sHTML;
         } else {

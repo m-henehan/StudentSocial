@@ -3,7 +3,6 @@ function postcomments(){
 	let likes = 0;
 	
 	let username = getCookie('username');
-	alert("username:" +username);
 	
     function extractModule(str)
     {
